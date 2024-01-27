@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap">
+    <link rel="stylesheet" type="text/css" href="./source/animation.css">
+    <link rel="icon" type="image/png" href="./assets/Black & White Minimalist Business Logo (1).png">
+    <style type="text/css">
+        body {
+            background-color: #f8f8f8;
+            font-family: "Poppins", sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #1a237e;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+
+        nav li {
+            margin: 0 1rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: 600;
+            transition: color 0.3s ease-in-out;
+        }
+
+        nav a:hover {
+            color: #ffc107;
+        }
+
+        /* Dashboard Content */
+        main {
+            background-color: #f5f5f5;
+            padding: 2rem;
+            text-align: left;
+            flex: 1;
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+        }
+
+       h2 {
+            color: #1a237e;
+            margin-left: 50px;
+            font-size: 38px;
+            font-family: "Poppins", sans-serif;
+            color: #ffc107;
+        }
+
+        /* Dashboard Features (Left Section) */
+        .dashboard-left {
+            width: 25%;
+            padding: 1rem;
+            background-color: #fff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .dashboard-left h3 {
+            color: black;
+            font-size: 35px;
+            font-weight: bold;
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        .dashboard-left ul {
+            list-style: none;
+            padding: 0;
+            font-size: 25px;
+            font-weight: bold;
+
+        }
+
+        .dashboard-left li {
+            margin: 0.5rem 0;
+        }
+
+        .dashboard-left a {
+            color: #1a237e;
+            text-decoration: none;
+            display: block;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .dashboard-left a:hover {
+            color: #ffc107;
+        }
+
+        /* Create a New Lesson (Center of the Body) */
+        .dashboard-center {
+            flex: 1;
+            text-align: center;
+        }
+
+        .dashboard-center h2 {
+            color: #1a237e;
+            margin-right: 90px;
+            font-size: 30px;
+        }
+
+     
+        /* Plus Icon Styles (You can add your preferred icon) */
+.plus-icon {
+    font-size: 6rem;
+    color: #1a237e;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+    margin-right: 20px; /* Add margin-right to create space between icons */
+}
+
+.plus-icon:hover {
+    color: #ffc107;
+}
+
+
+        /* CSS for the Notification Icon */
+        #notification-icon {
+            width: 30px; /* Adjust the width as needed */
+            height: 30px; /* Adjust the height as needed */
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #1a237e;
+            color: #fff;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 100px;
+        }
+
+        #contact-info {
+            margin-bottom: 1rem;
+        }
+
+        #footer-links {
+            display: flex;
+            justify-content: center;
+        }
+
+        #footer-links a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: 600;
+            transition: color 0.3s ease-in-out;
+        }
+
+        #footer-links a:hover {
+            color: #ffc107;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1><a href="index.html" style="text-decoration: none; color: #fff;">EduSnap.ai</a></h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="About.html">About</a></li>
+                <li><a href="Pricing.html">Pricing</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <h2>User Dashboard</h2>
+
+    <!-- Dashboard Content -->
+    <main>
+        <!-- Dashboard Features (Left Section) -->
+        <div class="dashboard-left">
+            <h3>Dashboard Menu</h3>
+            <ul>
+                <li><a href="VideoLibrary.html">Video Library</a></li>
+                <li><a href="GeneratedNotes.html">Generated Notes</a></li>
+                <li><a href="UserProfile.html">User profile settings</a></li>
+                <li><a href="#">Log Out</a></li>
+                <!-- Add more dashboard features here -->
+            </ul>
+        </div>
+
+       <!-- Test Your Knowledge (Center of the Body) -->
+<div class="dashboard-center">
+    <h2>Take Test Your Knowledge</h2>
+    <a href="Upload2.html" class="plus-icon" style="text-decoration: none; margin-top: 50px;">+</a>
+    <!-- You can add form elements or content to Test Your Knowledge -->
+</div>
+
+
+        <!-- Generate a Short Note (Center of the Body) -->
+        <div class="dashboard-center">
+            <h2>Generate a Short Note</h2>
+            <a href="Upload3.html" class="plus-icon" style="text-decoration: none;">+</a>
+            <!-- You can add form elements or content to Generate a Short Note -->
+        </div>
+    </main>
+
+    <!-- Footer Section (same as home page) -->
+    <footer>
+        <div id="contact-info">
+            <p id="english-contact">Contact us at: edusnapai@gmail.com</p>
+        </div>
+        <div id="footer-links">
+            <a href="PrivacyPolicy.html">Privacy Policy</a>
+            <a href="TermsofService.html">Terms of Service</a>
+            <a href="SocialLinks.html">Social Media Links</a>
+        </div>
+    </footer>
+</body>
+</html>

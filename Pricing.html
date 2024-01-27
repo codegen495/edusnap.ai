@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing </title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap">
+    <link rel="stylesheet" type="text/css" href="./source/animation.css">
+    <link rel="icon" type="image/png" href="./assets/Black & White Minimalist Business Logo (1).png">
+    <style>
+        body {
+            background-color: #f8f8f8;
+            font-family: "Poppins", sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #1a237e;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+
+        nav li {
+            margin: 0 1rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: 600;
+            transition: color 0.3s ease-in-out;
+        }
+
+        nav a:hover {
+            color: #ffc107;
+        }
+
+        /* CSS for the Notification Icon */
+        #notification-icon {
+            width: 30px;
+            height: 30px;
+        }
+
+        
+.buy-now-button,.toggle-button,.time-free-option {
+    background-color: #1a237e;
+    color: #fff;
+    padding: 15px 25px;
+    border: 2px solid #1a237e;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+
+
+.buy-now-button:hover ,.toggle-button:hover,.time-free-option:hover{
+    background-color: #1a237e;
+    color: #ff0;
+    transform: scale(1.05);
+}
+
+
+         .pricing-plan h3 {
+        color: #1a237e;
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+
+    .features-list {
+        list-style: none;
+        padding: 0;
+        margin: 10px 0;
+    }
+
+    .features-list li {
+        margin: 5px 0;
+        color: #555;
+        font-size: 1rem;
+    }
+
+
+    /* One-time Fee Options Section */
+    #one-time-fees h2 {
+        color: #1a237e;
+        margin-bottom: 2rem;
+        font-size: 2rem; /* Increased font size */
+        margin-left: 10px;
+        text-align: center;
+    }
+
+    .sub-description {
+        color: #555;
+        font-size: 1rem;
+        margin-bottom: 1rem;
+        margin-left: 25px;
+        margin-top: -10px;
+        text-align: center;
+    }
+
+
+   
+    /* One-time Fee Options Styles */
+    .time-free-container {
+        margin-top: 100px;
+        margin: 20px 0;
+        text-align: center;
+    }
+
+    .time-free-option {
+        margin: 0 10px;
+        padding: 50px;
+        border: 2px solid #1a237e;
+        border-radius: 10px;
+        background-color: #fff;
+        display: inline-block;
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+        color: #1a237e;
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out;
+        margin-bottom: 100px;
+        margin-top: 50px;
+    }
+
+    .time-free-option:hover {
+        transform: scale(1.05);
+    }
+
+
+      /* Pricing Section Styles */
+#pricing {
+    background-color: #fff;
+    padding: 2rem;
+    flex: 1;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center; /* Center the content */
+}
+
+#pricing h2 {
+    color: #1a237e;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Toggle Styles */
+.toggle-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.toggle-button.active {
+    background-color: #1a237e;
+    color: #fff;
+}
+
+.pricing-plan-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch; /* Ensure all items have the same height */
+    flex-wrap: wrap;
+    margin: 0 -10px; /* Add negative margin to offset the margins of individual pricing plans */
+}
+
+.pricing-plan {
+    align-self: stretch; /* Ensure all items have the same height */
+    border: 2px solid #1a237e;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    width: 250px; /* Fixed width for each pricing plan */
+    font-size: 20px;
+    font-weight: bold;
+    color: #1877f2;
+}
+
+.pricing-plan:hover {
+    transform: scale(1.05);
+}
+
+.sri-lankans-pricing,
+.others-pricing {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1; /* Allow flex items to grow and shrink equally */
+}
+
+.sri-lankans-pricing.active,
+.others-pricing.active {
+    display: flex;
+}
+
+/* Individual pricing plan within the container */
+.pricing-plan-container .pricing-plan {
+    margin: 10px; /* Adjust margin to create spacing between pricing plans */
+}
+
+
+          /* Footer Styles */
+        footer {
+            background-color: #1a237e;
+            color: #fff;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 100px;
+        }
+
+        #contact-info {
+            margin-bottom: 1rem;
+        }
+
+        #footer-links {
+            display: flex;
+            justify-content: center;
+        }
+
+        #footer-links a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: 600;
+            transition: color 0.3s ease-in-out;
+        }
+
+        #footer-links a:hover {
+            color: #ffc107;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+    </style>
+</head>
+<body>
+     <!-- Header Section -->
+    <header>
+        <h1><a href="index.html" style="text-decoration: none; color: #fff;">EduSnap.ai</a></h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="About.html">About</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+
+      <!-- Pricing Section -->
+<section id="pricing">
+    <h2>Pricing Plans</h2>
+
+    <div class="toggle-container">
+        <button class="toggle-button active" id="sri-lankans-toggle">Sri Lankans</button>
+        <button class="toggle-button" id="others-toggle">Others in the World</button>
+    </div>
+
+    <!-- Pricing plans for Sri Lankans -->
+    <div class="sri-lankans-pricing">
+        <div class="pricing-plan-container">
+            <div class="pricing-plan">
+                <h3>Basic Plan</h3>
+                <ul class="features-list">
+                    <li>100 Short Notes Generation</li>
+                    <li>100 Test Knowledge Quizzes</li>
+                </ul>
+                <p>For Sri Lankans: 499Rs/month</p>
+                
+                 <a href="Authentication1.html">
+                        <button class ="buy-now-button">Buy Now</button>
+                    </a>
+            </div>
+
+            <div class="pricing-plan">
+                <h3>Pro Plan</h3>
+                <ul class="features-list">
+                    <li>100 Video Lesson Generation</li>
+                </ul>
+                <p>For Sri Lankans: 1099Rs/month</p>
+                <a href="Authentication2.html">
+                        <button class ="buy-now-button">Buy Now</button>
+                    </a>
+            </div>
+
+            <div class="pricing-plan">
+                <span class="recommended-label">Recommended</span>
+                <h3>Premium Plan</h3>
+                <ul class="features-list">
+                    <li>Includes Basic and Pro Plan Features</li>
+                </ul>
+                <p>For Sri Lankans: 1299Rs/month</p>
+                <a href="Authentication3.html">
+                        <button class ="buy-now-button">Buy Now</button>
+                    </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pricing plans for Others in the World -->
+    <div class="others-pricing" style="display: none;">
+        <div class="pricing-plan-container">
+            <div class="pricing-plan">
+
+                <h3>Basic Plan</h3>
+                <ul class="features-list">
+                    <li>100 Short Notes Generation</li>
+                    <li>100 Test Knowledge Quizzes</li>
+                </ul>
+                <p>For Others: $4.99/month</p>
+                <a href="Authentication4.html">
+                        <button class ="buy-now-button">Buy Now</button>
+                    </a>
+            </div>
+
+            <div class="pricing-plan">
+                <h3>Pro Plan</h3>
+                <ul class="features-list">
+                    <li>100 Video Lesson Generation</li>
+                </ul>
+                <p>For Others: $12.99/month</p>
+                <a href="Authentication5.html">
+                        <button class ="buy-now-button">Buy Now</button>
+                    </a>
+            </div>
+
+            <div class="pricing-plan">
+                <span class="recommended-label">Recommended</span>
+                <h3>Premium Plan</h3>
+                <ul class="features-list">
+                    <li>Includes Basic and Pro Plan Features</li>
+                </ul>
+                <p>For Others: $15.99/month</p>
+                
+               <a href="Authentication6.html">
+                        <button class ="buy-now-button">Buy Now</button>
+                    </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+     
+<!-- One-time Fee Options Section -->
+<section id="one-time-fees">
+    <h2>One-time Fee Options</h2>
+    <p class="sub-description">Choose a package that suits your needs and enjoy additional free months for Basic Plan!</p>
+    <div class="time-free-container">
+         <div class="time-free-option" onclick="navigateToAuthentication7()">
+        <p>$20</p>
+        <p>3 Months Free</p>
+    </div>
+         <div class="time-free-option" onclick="navigateToAuthentication8()">
+            <p>$50</p>
+            <p>6 Months Free</p>
+        </div>
+         <div class="time-free-option" onclick="navigateToAuthentication9()">
+            <p>$100</p>
+            <p>1 Year Free</p>
+        </div>
+         <div class="time-free-option" onclick="navigateToAuthentication10()">
+            <p>$200</p>
+            <p>1.5 Years Free</p>
+        </div>
+    </div>
+</section>
+       
+    <!-- Footer Section -->
+    <footer>
+        <div id="contact-info">
+            <p id="english-contact" style="font-family: 'Poppins', sans-serif;">Contact us at: edusnapai@gmail.com</p>
+        </div>
+        <div id="footer-links">
+            <a href="PrivacyPolicy.html">Privacy Policy</a>
+            <a href="TermsofService.html">Terms of Service</a>
+            <a href="SocialLinks.html">Social Media Links</a>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript to handle the toggle button
+        const sriLankansToggle = document.getElementById('sri-lankans-toggle');
+        const othersToggle = document.getElementById('others-toggle');
+        const sriLankansPricing = document.querySelector('.sri-lankans-pricing');
+        const othersPricing = document.querySelector('.others-pricing');
+
+        sriLankansToggle.addEventListener('click', () => {
+            sriLankansToggle.classList.add('active');
+            othersToggle.classList.remove('active');
+            sriLankansPricing.style.display = 'flex';
+            othersPricing.style.display = 'none';
+        });
+
+        othersToggle.addEventListener('click', () => {
+            othersToggle.classList.add('active');
+            sriLankansToggle.classList.remove('active');
+            sriLankansPricing.style.display = 'none';
+            othersPricing.style.display = 'flex';
+        });
+    </script>
+
+    <script>
+        function navigateToAuthentication7() {
+            window.location.href = "Authentication7.html";
+        }
+
+        function navigateToAuthentication8() {
+            window.location.href = "Authentication8.html";
+        }
+
+        function navigateToAuthentication9() {
+            window.location.href = "Authentication9.html";
+        }
+
+        function navigateToAuthentication10() {
+            window.location.href = "Authentication10.html";
+        }
+
+
+    </script>
+    
+</body>
+</html>

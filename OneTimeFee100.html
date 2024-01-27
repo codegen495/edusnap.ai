@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One Time Fee</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap">
+    <link rel="stylesheet" type="text/css" href="./source/animation.css">
+    <link rel="icon" type="image/png" href="./assets/Black & White Minimalist Business Logo (1).png">
+    <style>
+        /* Body Styles */
+        body {
+            background-color: #f8f8f8;
+            font-family: "Poppins", sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #1a237e;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            /* Center titles */
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+
+        nav li {
+            margin: 0 1rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: 600;
+            transition: color 0.3s ease-in-out;
+        }
+
+        nav a:hover {
+            color: #ffc107;
+        }
+
+        /* CSS for the Notification Icon */
+        #notification-icon {
+            width: 30px;
+            height: 30px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #1a237e;
+            margin-bottom: 20px;
+        }
+
+        .checkout-summary {
+            border-top: 2px solid #1F2A3D;
+            padding-top: 20px;
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        .checkout-summary label {
+            font-size: 16px;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .checkout-summary p {
+            margin-top: 10px;
+            margin-bottom: 15px;
+        }
+
+        .checkout-summary h2 {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            margin-top: 20px;
+        }
+
+        .checkout-summary ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            margin-top: 10px;
+        }
+
+        .checkout-summary li {
+            margin-bottom: 5px;
+        }
+
+        .terms-checkbox {
+            font-size: 14px;
+            margin-top: 20px;
+        }
+
+        .terms-checkbox label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        .terms-checkbox input {
+            margin-right: 10px;
+        }
+
+        /* Subscribe Button */
+        .payment-button {
+            display: block;
+            width:100%;
+            background-color: #007BFF;
+            color: #fff;
+            padding: 15px;
+            text-decoration: none;
+            border: none;
+            border-radius: 28px;
+            font-weight: 700;
+            transition: background-color 0.3s ease;
+            text-align: center;
+            margin-top: 20px;
+            cursor: pointer;
+            font-family: "Poppins", sans-serif;
+            font-size: 13px;
+            
+        }
+
+        .payment-button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #1a237e;
+            color: #fff;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 150px;
+        }
+
+        #contact-info {
+            margin-bottom: 1rem;
+        }
+
+        #footer-links {
+            display: flex;
+            justify-content: center;
+        }
+
+        #footer-links a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: 600;
+            transition: color 0.3s ease-in-out;
+        }
+
+        #footer-links a:hover {
+            color: #ffc107;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1><a href="index.html" style="text-decoration: none; color: #fff;">EduSnap.ai</a></h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="About.html">About</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>One Time Fee -100$</h1>
+
+        <div class="checkout-summary">
+            <label>Checkout Summary:</label>
+            <p>Payment: $100.00</p>
+            <p>OneTime Fee: Basic Plan</p>
+
+            <!-- Premium Plan Features -->
+            <h2>Services Included:</h2>
+            <ul>
+                <li>1 Year Free :Basic Plan</li>
+                
+            </ul>
+
+            <div class="terms-checkbox">
+                <label>
+                    <input type="checkbox" required>
+                    I agree to the terms and conditions
+                </label>
+            </div>
+
+            <!-- Subscribe Button -->
+            <button class="payment-button" onclick="subscribe()">Make Payment</button>
+        </div>
+    </div>
+
+    <!-- Footer Styles -->
+    <footer>
+        <div id="contact-info">
+            <p id="english-contact">Contact us at: edusnapai@gmail.com</p>
+        </div>
+        <div id="footer-links">
+            <a href="PrivacyPolicy.html">Privacy Policy</a>
+            <a href="TermsofService.html">Terms of Service</a>
+            <a href="SocialLinks.html">Social Media Links</a>
+        </div>
+    </footer>
+
+    <script>
+        function subscribe() {
+        // Add your subscription logic here
+        alert('Thank you for subscribing!');
+        
+        // Redirect to Dashboard.html
+        window.location.href = 'Dashboard.html';
+    }
+    </script>
+
+</body>
+
+</html>

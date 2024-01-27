@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes Page</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap">
+    <link rel="stylesheet" type="text/css" href="./source/animation.css">
+    <link rel="icon" type="image/png" href="./assets/Black & White Minimalist Business Logo (1).png">
+    <style>
+        body {
+            background-color: #f8f8f8;
+            font-family: "Poppins", sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #1a237e;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+
+        nav li {
+            margin: 0 1rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: 600;
+            transition: color 0.3s ease-in-out;
+        }
+
+        nav a:hover {
+            color: #ffc107;
+        }
+
+        /* CSS for the Notification Icon */
+        #notification-icon {
+            width: 30px;
+            height: 30px;
+        }
+
+
+        /* Notes Section Styles */
+#notes {
+    background-color: #fff;
+    padding: 2rem;
+    flex: 1; /* Fill available vertical space */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
+}
+
+#notes h2 {
+    color: #1a237e;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+/* Generated Short Note Container */
+#user-notes {
+    border: 2px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    width: 250px; /* Set width */
+    height: 380px; /* Set height */
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Download Button */
+#download-button {
+    background-color: #2196f3; /* Light Blue */
+    color: #fff;
+    padding: 20px 40px; /* Increased padding */
+    border: none;
+    border-radius: 8px; /* Increased border radius */
+    cursor: pointer;
+    margin-top: 70px;
+    font-family: "Poppins", sans-serif; /* Set font family */
+    font-size: 18px;
+}
+
+#download-button:hover {
+    background-color: green; /* Darker blue on hover */
+}
+
+/* Rectangular Section for Short Note Preview */
+#short-note-preview {
+    display: none;
+    padding: 20px; /* Increased padding */
+    border: 2px solid #ccc;
+    width: 360px; /* Set width */
+    height: 540px; /* Set height */
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+     
+          /* Footer Styles */
+        footer {
+            background-color: #1a237e;
+            color: #fff;
+            text-align: center;
+            padding: 2rem 0;
+            
+        }
+
+        #contact-info {
+            margin-bottom: 1rem;
+        }
+
+        #footer-links {
+            display: flex;
+            justify-content: center;
+        }
+
+        #footer-links a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: 600;
+            transition: color 0.3s ease-in-out;
+        }
+
+        #footer-links a:hover {
+            color: #ffc107;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1><a href="index.html" style="text-decoration: none; color: #fff;">EduSnap.ai</a></h1>
+        <nav>
+            <ul>
+                <li><a href="#"><img src="notification.png" alt="Notifications" id="notification-icon"></a></li>
+                <li><a href="#">Username</a></li>
+                <li><a href="#">Log Out</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <!-- Notes Section -->
+    <section id="notes">
+        <h2>Your Lesson as a Short Note!</h2>
+
+        <div id="user-notes">
+           Generated Short Note
+        </div>
+
+        <div id="short-note-preview">
+            Preview of Generated Short Note
+        </div>
+
+        <button id="download-button">Download Note</button>
+
+        <button id="download-button"><a href="Quiz1.html" style="text-decoration: none; color: #fff;">Test Your Knowledge</a></button>
+    </section>
+
+    <!-- Footer Section (same as other pages) -->
+    <footer>
+        <div id="contact-info">
+            <p id="english-contact">Contact us at: edusnapai@gmail.com</p>
+        </div>
+        <div id="footer-links">
+            <a href="PrivacyPolicy.html">Privacy Policy</a>
+            <a href="TermsofService.html">Terms of Service</a>
+            <a href="SocialLinks.html">Social Media Links</a>
+        </div>
+    </footer>
+
+  <!-- Include this script in the head or before the closing body tag -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Add JavaScript to show/hide the note preview
+        const userNotes = document.getElementById('user-notes');
+        const shortNotePreview = document.getElementById('short-note-preview');
+
+        userNotes.addEventListener('click', function () {
+            // Hide the user notes
+            userNotes.style.display = 'none';
+
+            // Show the short note preview
+            shortNotePreview.style.display = 'block';
+        });
+    });
+</script>
+
+
+
+</body>
+</html>

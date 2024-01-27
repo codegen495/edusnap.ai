@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generated Video </title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap">
+    <link rel="stylesheet" type="text/css" href="./source/animation.css">
+    <link rel="icon" type="image/png" href="./assets/Black & White Minimalist Business Logo (1).png">
+    <style>
+         /* Body Styles */
+body {
+    background-color: #f8f8f8;
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header Styles */
+header {
+    background-color: #1a237e;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Center titles */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+nav li {
+    margin: 0 1rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+    transition: color 0.3s ease-in-out;
+}
+
+nav a:hover {
+    color: #ffc107;
+}
+
+/* CSS for the Notification Icon */
+#notification-icon {
+    width: 30px;
+    height: 30px;
+}
+
+        /* Video Player Styles */
+        #video-container {
+    color: #1a237e;
+    font-size: 27px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+        #video-player {
+            width: 150%;
+            max-width: 1000px;
+            margin: 0 auto;
+            border-radius: 8px;
+
+        }
+
+        #subtitle-select {
+            margin: 40px 2;
+            border: 2px;
+            font-family: "Poppins", sans-serif;
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 40px;
+        }
+        #subtitle-language {
+            font-family: "Poppins", sans-serif;
+            font-size: 20px;
+            border: 2px;
+            border-radius: 3px;
+            background-color: lightgray;
+            width: 70px;
+        }
+
+        #download-button, #short-note-button, #knowledge-test-button {
+    background-color: #2196f3;
+    color: #fff;
+    padding: 15px 50px;
+    border: none;
+    cursor: pointer;
+    font-size: 23px;
+    margin: 20px 0;
+    border-radius: 5px;
+    margin-top: 90px;
+    font-family: "Poppins", sans-serif;
+}
+
+
+    #download-button:hover, #short-note-button:hover, #knowledge-test-button:hover {
+        background-color: #45a049;
+    }
+
+        /* Footer Styles */
+footer {
+    background-color: #1a237e;
+    color: #fff;
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 100px;
+}
+
+#contact-info {
+    margin-bottom: 1rem;
+}
+
+#footer-links {
+    display: flex;
+    justify-content: center;
+}
+
+#footer-links a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: 600;
+    transition: color 0.3s ease-in-out;
+}
+
+#footer-links a:hover {
+    color: #ffc107;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1><a href="index.html" style="text-decoration: none; color: #fff;">EduSnap.ai</a></h1>
+        <nav>
+            <ul>
+                <li><a href="#"><img src="notification.png" alt="Notifications" id="notification-icon"></a></li>
+                <li><a href="#">Username</a></li>
+                <li><a href="#">Log Out</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Video Player Section -->
+    <section id="video-container">
+        <h2>Your Lesson as a Video Explanation!</h2>
+
+        <video id="video-player" controls>
+            <source src="your_video.mp4" type="video/mp4">
+            <!-- Include other video sources as needed (e.g., WebM, Ogg) -->
+            Your browser does not support the video tag.
+        </video>
+
+        <div id="subtitle-select">
+            <label for="subtitle-language">Subtitle Show</label>
+            <select id="subtitle-language">
+
+                <option value="on">On</option>
+                <option value="off">Off</option>
+            </select>
+        </div>
+
+        <button id="download-button" onclick="downloadVideo()">Download Video</button>
+        
+    </section>
+
+    <!-- Footer Section (same as other pages) -->
+    <footer>
+        <div id="contact-info">
+            <p id="english-contact">Contact us at: edusnapai@gmail.com</p>
+        </div>
+        <div id="footer-links">
+            <a href="PrivacyPolicy.html">Privacy Policy</a>
+            <a href="TermsofService.html">Terms of Service</a>
+            <a href="SocialLinks.html">Social Media Links</a>
+        </div>
+    </footer>
+
+    <script>
+        function downloadVideo() {
+            // Add your download logic here
+            // Example: window.location.href = 'your_video.mp4';
+        }
+    </script>
+</body>
+</html>

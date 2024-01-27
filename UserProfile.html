@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Settings</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap">
+    <link rel="stylesheet" type="text/css" href="./source/animation.css">
+    <link rel="icon" type="image/png" href="./assets/Black & White Minimalist Business Logo (1).png">
+    <style>
+        /* Body Styles */
+        body {
+            background-color: #f8f8f8;
+            font-family: "Poppins", sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #1a237e;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center; /* Center titles */
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+
+        nav li {
+            margin: 0 1rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: 600;
+            transition: color 0.3s ease-in-out;
+        }
+
+        nav a:hover {
+            color: #ffc107;
+        }
+
+        /* CSS for the Notification Icon */
+        #notification-icon {
+            width: 30px;
+            height: 30px;
+        }
+
+        /* User Profile Styles */
+        #user-profile {
+            background-color: #fff;
+            padding: 2rem;
+            flex: 1;
+        }
+
+        /* Profile Sections */
+        .profile-section {
+            margin-bottom: 20px;
+        }
+        h2 {
+            color: #1a237e;
+            font-size: 30px;
+        }
+
+        .profile-section h2 {
+            color: black;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        /* User Information Form Styles */
+        .user-info-form, .privacy-settings, .subscription-details, .account-deletion, .payment-method {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+
+        .user-info-form label, .privacy-settings label, .subscription-details label, .payment-method label {
+            display: block;
+            margin-top: 10px;
+            color: #555;
+            font-size: 16px;
+        }
+
+        .user-info-form input, .privacy-settings input, .subscription-details input, .payment-method input {
+            width: 100%;
+            padding: 12px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .user-info-form button, .privacy-settings button, .subscription-details button, .account-deletion button, .payment-method button {
+            background-color: #1a237e;
+            color: #fff;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
+            font-size: 16px;
+        }
+
+        /* Account Deletion Styles */
+        .account-deletion button {
+            background-color: #e74c3c; /* Red color for account deletion */
+        }
+
+        /* Styles for Delete Account Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 400px;
+            text-align: center;
+        }
+
+        .close {
+            float: right;
+            cursor: pointer;
+        }
+
+        /* Styles for Confirm Account Deletion Button */
+        #confirm-delete-button {
+            background-color: #e74c3c;
+            color: #fff;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
+            font-size: 16px;
+        }
+
+        /* Payment Method Change Section Styles */
+        .payment-method label, .payment-method input, .added-cards h3, .added-cards .card p, .added-cards .card button.remove-card-button {
+            margin-top: 15px;
+            font-size: 16px;
+        }
+
+        .added-cards h3 {
+            margin-top: 15px;
+            font-size: 16px;
+            color: #1a237e;
+        }
+
+        .payment-method input[type="checkbox"] + .checkmark {
+            position: relative;
+            display: inline-block;
+            width: 25px; /* Increased size */
+            height: 25px; /* Increased size */
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            margin-left: 5px;
+            margin-right: 10px; /* Adjusted margin-right */
+        }
+
+        .payment-method input[type="checkbox"]:checked + .checkmark {
+            background-color: #1a237e;
+        }
+
+        /* Styling for checkmark inside the checkbox */
+        .payment-method input[type="checkbox"] + .checkmark:after {
+            content: '';
+            position: absolute;
+            display: none;
+        }
+
+        .payment-method input[type="checkbox"]:checked + .checkmark:after {
+            display: block;
+        }
+
+        /* Styling for checkmark inside the checkbox */
+        .payment-method input[type="checkbox"] + .checkmark:after {
+            left: 7px;
+            top: 3px;
+            width: 5px;
+            height: 10px;
+            border: solid #fff;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+
+        .remove-card-button {
+            background-color: #1a237e;
+            color: #fff;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
+            font-size: 16px;
+            margin-left: 0; /* Adjusted margin-left */
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #1a237e;
+            color: #fff;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 100px;
+        }
+
+        #contact-info {
+            margin-bottom: 1rem;
+        }
+
+        #footer-links {
+            display: flex;
+            justify-content: center;
+        }
+
+        #footer-links a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: 600;
+            transition: color 0.3s ease-in-out;
+            font-size: 16px;
+        }
+
+        #footer-links a:hover {
+            color: #ffc107;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1><a href="index.html" style="text-decoration: none; color: #fff;">EduSnap.ai</a></h1>
+        <nav>
+            <ul>
+                <li><a href="#"><img src="notification.png" alt="Notifications" id="notification-icon"></a></li>
+                <li><a href="#">Username</a></li>
+                <li><a href="#">Log Out</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- User Profile Section -->
+    <section id="user-profile">
+        <h2>User Profile</h2>
+
+        <!-- User Information Section -->
+        <div class="profile-section">
+            <h2>Edit User Information</h2>
+            <form class="user-info-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required placeholder="Your name">
+
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required placeholder="Your username">
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required placeholder="Your email">
+
+                <label for="password">New Password:</label>
+                <input type="password" id="password" name="password" required placeholder="New password">
+
+                <button type="submit">Save Changes</button>
+            </form>
+        </div>
+
+        <!-- Privacy and Security Settings Section -->
+<div class="profile-section">
+    <h2>Privacy and Security Settings</h2>
+    <form class="privacy-settings">
+        <label for="privacy">Receive personalized recommendations:</label>
+        <input type="checkbox" id="privacy" name="privacy" checked>
+
+        <label for="security">Enable two-factor authentication:</label>
+        <input type="checkbox" id="security" name="security" checked>
+
+        <button type="submit">Save Settings</button>
+    </form>
+</div>
+
+        <!-- Subscription/Payment Details Section -->
+        <div class="profile-section">
+            <h2>Subscription/Payment Details</h2>
+            <form class="subscription-details">
+                <label for="subscription">Subscription details:</label>
+                <input type="text" id="subscription" name="subscription" placeholder="Your subscription plan">
+
+                <label for="payment">Payment details:</label>
+                <input type="text" id="payment" name="payment" placeholder="Your payment method">
+
+                <button type="submit">Save Details</button>
+            </form>
+        </div>
+<!-- Payment Method Change Section -->
+<div class="profile-section">
+    <h2>Payment Method Change</h2>
+
+    <!-- Add Card Form -->
+    <form class="payment-method">
+        <label for="cardholder">Name on the Card:</label>
+        <input type="text" id="cardholder" name="cardholder" placeholder="Cardholder's name">
+
+        <label for="cardnumber">Card Number:</label>
+        <input type="text" id="cardnumber" name="cardnumber" placeholder="Card number">
+
+        <label for="expiry">Expiry Date:</label>
+        <input type="text" id="expiry" name="expiry" placeholder="MM/YYYY">
+
+        <label for="cvv">CVV:</label>
+        <input type="text" id="cvv" name="cvv" placeholder="CVV">
+
+        <label for="defaultCard">Set as Default:</label>
+        <span class="checkmark"></span> <!-- Styling for checkbox -->
+        <input type="checkbox" id="defaultCard" name="defaultCard">
+
+        <button type="submit" style="margin-top: 15px;">Save Card</button>
+    </form>
+
+    <!-- Display Already Added Cards -->
+    <div class="added-cards">
+        <h3>Added Cards:</h3>
+
+        <!-- Sample Card (Replace with dynamically fetched card details) -->
+        <div class="card">
+            <p><strong>Cardholder:</strong> John Doe</p>
+            <p><strong>Card Number:</strong> **** **** **** 1234</p>
+            <p><strong>Expiry Date:</strong> 12/2023</p>
+            <p><strong>Default:</strong> Yes</p>
+            <button class="remove-card-button">Remove Card</button>
+        </div>
+
+        <!-- Add more cards similarly -->
+    </div>
+</div>
+
+        <!-- Account Deletion Section -->
+        <div class="profile-section">
+            <h2>Account Deletion</h2>
+            <div class="account-deletion">
+                <button id="delete-account-button">Delete Account</button>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Account Deletion Confirmation Modal -->
+    <div id="delete-account-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="close-modal-button">&times;</span>
+            <h2>Confirm Account Deletion</h2>
+            <p>Are you sure you want to delete your account? This action cannot be undone.</p>
+            <button id="confirm-delete-button">Delete My Account</button>
+        </div>
+    </div>
+
+    <!-- Footer Section (same as home page) -->
+    <footer>
+        <div id="contact-info">
+            <p id="english-contact">Contact us at: edusnapai@gmail.com</p>
+        </div>
+        <div id="footer-links">
+            <a href="PrivacyPolicy.html">Privacy Policy</a>
+            <a href="TermsofService.html">Terms of Service</a>
+            <a href="SocialLinks.html">Social Media Links</a>
+        </div>
+    </footer>  
+  <!-- ... (your HTML code above) ... -->
+
+<!-- ... (your HTML code above) ... -->
+
+<script defer>
+    // Get modal and buttons
+    var modal = document.getElementById("delete-account-modal");
+    var deleteButton = document.getElementById("delete-account-button");
+    var closeButton = document.getElementById("close-modal-button");
+
+    // Open the modal when the delete button is clicked
+    deleteButton.onclick = function (event) {
+        // Prevent the default behavior of the button (form submission in this case)
+        event.preventDefault();
+
+        modal.style.display = "block";
+    }
+
+    // Close the modal when the close icon is clicked
+    closeButton.onclick = function () {
+        modal.style.display = "none";
+    }
+
+    // Close the modal when clicking outside of the modal
+    window.onclick = function (event) {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
+</body>
+
+</body>
+</html>

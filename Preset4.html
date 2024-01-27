@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrange Lesson</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap">
+    <link rel="stylesheet" type="text/css" href="./source/animation.css">
+    <link rel="icon" type="image/png" href="./assets/Black & White Minimalist Business Logo (1).png">
+    <style type="text/css">
+  /* Body Styles */
+body {
+    background-color: #f8f8f8;
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header Styles */
+header {
+    background-color: #1a237e;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Center titles */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+nav li {
+    margin: 0 1rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+    transition: color 0.3s ease-in-out;
+}
+
+nav a:hover {
+    color: #ffc107;
+}
+
+/* CSS for the Notification Icon */
+#notification-icon {
+    width: 30px;
+    height: 30px;
+}
+
+/* Arrange Lesson Section Styles */
+#arrange-lesson {
+    background-color: #fff;
+    padding: 2rem;
+    text-align: center;
+}
+
+#arrange-lesson h2 {
+    color: #1a237e;
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+/* Image Arrangement (Drag and Drop) */
+#image-arrangement {
+    text-align: center;
+    margin: 20px 0;
+}
+
+#image-arrangement label {
+    font-weight: bold;
+    display: block;
+    text-align: center;
+    margin-top: 50px;
+    font-size: 20px;
+}
+
+#image-list {
+    list-style-type: none;
+    padding: 2;
+    display: flex;
+    flex-wrap: wrap;
+    border: 3px;
+}
+
+.draggable-image {
+    margin: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    width: 220px;
+    height: 220px;
+    text-align: center;
+    line-height: 150px;
+    cursor: move;
+}
+
+#options-container {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+}
+
+.options-box {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.options-box label {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+select,#duration   {
+    width: 90%;
+    padding: 0.8rem;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+}
+
+#duration {
+    width: 10%;
+    padding: 0.8rem;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-size: 15px;
+    font-family: "Poppins", sans-serif;
+}
+
+#video-duration {
+    text-align: center;
+    margin: 20px 0;
+    font-family: "Poppins", sans-serif;
+}
+
+#arrange-lesson button {
+    background-color: #2196f3;
+    color: #fff;
+    padding: 15px 50px;
+    border: none;
+    cursor: pointer;
+    font-size: 23px;
+    margin: 20px 0;
+    border-radius: 5px;
+    margin-top: 100px;
+    font-family: "Poppins", sans-serif;
+}
+
+#arrange-lesson button:hover {
+        background-color: #45a049;
+    }
+
+/* Footer Styles */
+footer {
+    background-color: #1a237e;
+    color: #fff;
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 100px;
+}
+
+#contact-info {
+    margin-bottom: 1rem;
+}
+
+#footer-links {
+    display: flex;
+    justify-content: center;
+}
+
+#footer-links a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: 600;
+    transition: color 0.3s ease-in-out;
+}
+
+#footer-links a:hover {
+    color: #ffc107;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+    </style>
+</head>
+<body>
+     <!-- Header Section -->
+    <header>
+        <h1><a href="index.html" style="text-decoration: none; color: #fff;">EduSnap.ai</a></h1>
+        <nav>
+            <ul>
+                <li><a href="#"><img src="notification.png" alt="Notifications" id="notification-icon"></a></li>
+                <li><a href="#">Username</a></li>
+                <li><a href="#">Log Out</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Arrange Lesson Section -->
+    <section id="arrange-lesson">
+        <h2>Arrange Lesson</h2>
+
+        <!-- Image Arrangement (Drag and Drop) -->
+        <div id="image-arrangement">
+            <label for="image-order">Arrange Uploaded Images to Your Lesson Order</label>
+            <ul id="image-list" class="image-list">
+                <li class="draggable-image" draggable="true">Image 1</li>
+                <li class="draggable-image" draggable="true">Image 2</li>
+                <li class="draggable-image" draggable="true">Image 3</li>
+                <!-- Add more images -->
+            </ul>
+        </div>
+
+        
+        </div>
+
+       
+        <button id="arrange-button" onclick="goToPresetPage()">Test Your Knowledge</button>
+
+
+
+         
+    </section>
+
+  <footer>
+        <div id="contact-info">
+            <p id="english-contact">Contact us at: edusnapai@gmail.com</p>
+        </div>
+        <div id="footer-links">
+            <a href="PrivacyPolicy.html">Privacy Policy</a>
+            <a href="TermsofService.html">Terms of Service</a>
+            <a href="SocialLinks.html">Social Media Links</a>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Drag and Drop Functionality -->
+    <script>
+        const imageList = document.getElementById("image-list");
+        let draggedItem = null;
+
+        imageList.addEventListener("dragstart", (e) => {
+            draggedItem = e.target;
+            e.target.style.opacity = 0.5;
+        });
+
+        imageList.addEventListener("dragend", (e) => {
+            e.target.style.opacity = "";
+        });
+
+        imageList.addEventListener("dragover", (e) => {
+            e.preventDefault();
+        });
+
+        imageList.addEventListener("dragenter", (e) => {
+            if (e.target.className === "draggable-image") {
+                e.target.style.backgroundColor = "lightgray";
+            }
+        });
+
+        imageList.addEventListener("dragleave", (e) => {
+            if (e.target.className === "draggable-image") {
+                e.target.style.backgroundColor = "";
+            }
+        });
+
+        imageList.addEventListener("drop", (e) => {
+            if (e.target.className === "draggable-image") {
+                e.target.style.backgroundColor = "";
+                draggedItem.style.backgroundColor = "";
+                imageList.insertBefore(draggedItem, e.target);
+            }
+        });
+
+        function goToPresetPage() {
+        window.location.href = "Quiz2.html";
+    }
+    </script>
+
+
+
+</body>
+</html>

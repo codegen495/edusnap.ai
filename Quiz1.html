@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Your Knowledge</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap">
+    <link rel="stylesheet" type="text/css" href="./source/animation.css">
+    <link rel="icon" type="image/png" href="./assets/Black & White Minimalist Business Logo (1).png">
+    <style>
+         /* Body Styles */
+        body {
+            background-color: #f8f8f8;
+            font-family: "Poppins", sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #1a237e;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center; /* Center titles */
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+
+        nav li {
+            margin: 0 1rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: 600;
+            transition: color 0.3s ease-in-out;
+        }
+
+        nav a:hover {
+            color: #ffc107;
+        }
+
+        /* CSS for the Notification Icon */
+        #notification-icon {
+            width: 30px;
+            height: 30px;
+        }
+
+        /* Tests/Quizzes Section Styles */
+        #tests-quizzes {
+            background-color: #fff;
+            padding: 2rem;
+            font-family: "Poppins", sans-serif;
+        }
+
+        #tests-quizzes h2 {
+            color: #1a237e;
+            font-size: 35px;
+            margin-bottom: 60px;
+            margin-top: 20px;
+        }
+
+        .quiz-question {
+            margin-bottom: 20px;
+        }
+
+        .quiz-question p {
+            font-size: 22px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .quiz-options {
+            list-style: none;
+            padding: 0;
+            margin-top: 0;
+        }
+
+        .quiz-option {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .quiz-option label {
+            font-size: 20px;
+            margin-left: 10px;
+            color: darkblue;
+        }
+
+        .quiz-option input[type="radio"] {
+            margin-right: 10px;
+            padding: 15px;
+        }
+
+        .quiz-feedback {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #d32f2f; /* Red color for feedback */
+            font-size: 18px;
+        }
+
+        /* Add this to your existing CSS styles */
+.result-info {
+    margin-top: 20px;
+    font-size: 22px;
+    color: #2196f3;
+}
+
+.result-info p {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+#short-note-button{
+    background-color: #2196f3;
+    color: #fff;
+    padding: 15px 50px;
+    border: none;
+    cursor: pointer;
+    font-size: 23px;
+    margin: 20px 0;
+    border-radius: 5px;
+    margin-top: 90px;
+    font-family: "Poppins", sans-serif;
+    margin-left: 50px;
+}
+
+#short-note-button:hover {
+        background-color: #45a049;
+    }
+
+
+
+
+       /* Footer Styles */
+        footer {
+            background-color: #1a237e;
+            color: #fff;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 100px;
+        }
+
+        #contact-info {
+            margin-bottom: 1rem;
+        }
+
+        #footer-links {
+            display: flex;
+            justify-content: center;
+        }
+
+        #footer-links a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: 600;
+            transition: color 0.3s ease-in-out;
+        }
+
+        #footer-links a:hover {
+            color: #ffc107;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1><a href="index.html" style="text-decoration: none; color: #fff;">EduSnap.ai</a></h1>
+        <nav>
+            <ul>
+                <li><a href="#"><img src="notification.png" alt="Notifications" id="notification-icon"></a></li>
+                <li><a href="#">Username</a></li>
+                <li><a href="#">Log Out</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Tests/Quizzes Section -->
+    <section id="tests-quizzes">
+        <h2>Test Your Knowledge Now!</h2>
+
+        <div class="quiz-question">
+            <p>Question 1: What is the capital of France?</p>
+            <ul class="quiz-options">
+                <li class="quiz-option">
+                    <label>
+                        <input type="radio" name="q1" value="paris">
+                        Paris
+                    </label>
+                </li>
+                <li class="quiz-option">
+                    <label>
+                        <input type="radio" name="q1" value="london">
+                        London
+                    </label>
+                </li>
+                <li class="quiz-option">
+                    <label>
+                        <input type="radio" name="q1" value="berlin">
+                        Berlin
+                    </label>
+                </li>
+            </ul>
+            <div class="quiz-feedback" id="q1-feedback">Correct Answer: Paris</div>
+        </div>
+
+        <div class="quiz-question">
+            <p>Question 2: Which planet is known as the Red Planet?</p>
+            <ul class="quiz-options">
+                <li class="quiz-option">
+                    <label>
+                        <input type="radio" name="q2" value="earth">
+                        Earth
+                    </label>
+                </li>
+                <li class="quiz-option">
+                    <label>
+                        <input type="radio" name="q2" value="mars">
+                        Mars
+                    </label>
+                </li>
+                <li class="quiz-option">
+                    <label>
+                        <input type="radio" name="q2" value="venus">
+                        Venus
+                    </label>
+                </li>
+            </ul>
+            <div class="quiz-feedback" id="q2-feedback">Correct Answer: Mars</div>
+        </div>
+
+        <!-- Add more questions with the same structure -->
+
+         <div class="result-info">
+        <p>Percentage of Correct Answers: <span id="percentage">0%</span></p>
+        <p>Level of Understanding: <span id="level">Not assessed</span></p>
+    </div>
+</section>
+
+<button id="short-note-button"><a href="Dashboard1.html" style="text-decoration: none; color: #fff;">Back to Dashboard</a></button>
+
+    <!-- Footer Styles -->
+    <footer>
+        <div id="contact-info">
+            <p id="english-contact">Contact us at: edusnapai@gmail.com</p>
+        </div>
+        <div id="footer-links">
+            <a href="PrivacyPolicy.html">Privacy Policy</a>
+            <a href="TermsofService.html">Terms of Service</a>
+            <a href="SocialLinks.html">Social Media Links</a>
+        </div>
+    </footer>
+</body>
+</html>

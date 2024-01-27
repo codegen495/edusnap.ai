@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Library</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap">
+    <link rel="stylesheet" type="text/css" href="./source/animation.css">
+    <link rel="icon" type="image/png" href="./assets/Black & White Minimalist Business Logo (1).png">
+    <style>
+        /* Body Styles */
+        body {
+            background-color: #f8f8f8;
+            font-family: "Poppins", sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #1a237e;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center; /* Center titles */
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+
+        nav li {
+            margin: 0 1rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: 600;
+            transition: color 0.3s ease-in-out;
+        }
+
+        nav a:hover {
+            color: #ffc107;
+        }
+
+        /* CSS for the Notification Icon */
+        #notification-icon {
+            width: 30px;
+            height: 30px;
+        }
+
+
+        h2 {
+
+            color: #1a237e;
+            font-size: 30px;
+        }
+
+        /* Video Library Styles */
+        #video-library {
+            background-color: #fff;
+            padding: 2rem;
+            flex: 1;
+        }
+
+        .video-container {
+            display: flex;
+            flex-direction: column; /* Display videos vertically */
+        }
+
+        .video {
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .video:hover {
+            transform: scale(1.05);
+        }
+
+        .video video {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .video h3 {
+            font-size: 18px;
+            margin: 10px 0;
+            color: black;
+            text-align: left;
+        }
+
+        .video p {
+            font-size: 14px;
+            margin: 5px 0;
+            color: #555;
+            text-align: left;
+        }
+
+        .video a {
+            display: inline-block;
+            background-color: #1a237e;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 10px;
+            transition: background-color 0.3s ease-in-out;
+            text-align: left;
+        }
+
+        .video a:hover {
+            background-color: #ffc107;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #1a237e;
+            color: #fff;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 100px;
+        }
+
+        #contact-info {
+            margin-bottom: 1rem;
+        }
+
+        #footer-links {
+            display: flex;
+            justify-content: center;
+        }
+
+        #footer-links a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: 600;
+            transition: color 0.3s ease-in-out;
+        }
+
+        #footer-links a:hover {
+            color: #ffc107;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1><a href="index.html" style="text-decoration: none; color: #fff;">EduSnap.ai</a></h1>
+        <nav>
+            <ul>
+                <li><a href="#"><img src="notification.png" alt="Notifications" id="notification-icon"></a></li>
+                <li><a href="#">Username</a></li>
+                <li><a href="#">Log Out</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Video Library Section -->
+    <section id="video-library">
+        <h2>Video Library</h2>
+        <div class="video-container">
+            <!-- Video 1 -->
+            <div class="video">
+                <video src="video1.mp4" controls></video>
+                <h3>Video Title 1</h3>
+                <p>Released Date: January 1, 2023</p>
+                <p>Video Details: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <a href="video1.mp4" download>Download</a>
+            </div>
+
+            <!-- Video 2 -->
+            <div class="video">
+                <video src="video2.mp4" controls></video>
+                <h3>Video Title 2</h3>
+                <p>Released Date: February 15, 2023</p>
+                <p>Video Details: Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <a href="video2.mp4" download>Download</a>
+            </div>
+
+            <!-- Video 3 -->
+            <div class="video">
+                <video src="video3.mp4" controls></video>
+                <h3>Video Title 3</h3>
+                <p>Released Date: February 15, 2023</p>
+                <p>Video Details: Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <a href="video3.mp4" download>Download</a>
+            </div>
+
+            <!-- Add more videos similarly -->
+        </div>
+    </section>
+
+    <!-- Footer Section (similar to other pages) -->
+    <!-- Footer Section (same as home page) -->
+    <footer>
+        <div id="contact-info">
+            <p id="english-contact">Contact us at: edusnapai@gmail.com</p>
+        </div>
+        <div id="footer-links">
+            <a href="PrivacyPolicy.html">Privacy Policy</a>
+            <a href="TermsofService.html">Terms of Service</a>
+            <a href="SocialLinks.html">Social Media Links</a>
+        </div>
+    </footer>
+</body>
+</html>

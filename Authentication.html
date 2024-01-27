@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authentication</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap">
+    <link rel="stylesheet" type="text/css" href="./source/animation.css">
+    <link rel="icon" type="image/png" href="./assets/Black & White Minimalist Business Logo (1).png">
+    <style type="text/css">
+         body {
+            background-color: #f8f8f8;
+            font-family: "Poppins", sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #555;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #1a237e;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+
+        nav li {
+            margin: 0 1rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: 600;
+            transition: color 0.3s ease-in-out;
+        }
+
+        nav a:hover {
+            color: #ffc107;
+        }
+
+        /* Login/Registration Section Styles */
+        #login-registration {
+            background-color: #f5f5f5;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        #login-registration h2 {
+            color: #1a237e;
+            margin-bottom: 2rem;
+        }
+
+        #login-registration-form {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        #login-form, #registration-form {
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #fff;
+            width: 45%; /* Adjust the width as needed */
+            max-width: 400px;
+            text-align: center;
+            padding: 2rem;
+            margin: 1rem;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin: 1rem 0;
+            font-weight: 600;
+        }
+
+        input {
+            padding: 1rem;
+            margin: 0.5rem 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            transition: border-color 0.3s ease-in-out;
+        }
+
+        input:hover,
+        input:focus {
+            border-color: #2196f3;
+        }
+
+        button {
+            background-color: #2196f3;
+            color: #fff;
+            padding: 1rem 2rem;
+            border: none;
+            cursor: pointer;
+            margin-top: 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s ease-in-out;
+            font-weight: 600;
+            font-family: "Poppins", sans-serif;
+        }
+
+        button:hover {
+            background-color: #1565c0;
+        }
+
+        /* Social Authentication Styles */
+        #social-auth {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 1rem;
+        }
+
+        #social-auth button {
+            margin: 0.5rem;
+            padding: 0.7rem 1.5rem;
+            font-weight: 600;
+        }
+
+        #social-auth button#facebook-auth {
+            background-color: #1877f2;
+        }
+
+        #social-auth button#google-auth {
+            background-color: #4285f4;
+        }
+
+        #social-auth button:hover {
+            opacity: 0.8;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #1a237e;
+            color: #fff;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+
+        #contact-info {
+            margin-bottom: 1rem;
+        }
+
+        #footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        #footer-links a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0.5rem;
+            font-weight: 600;
+            transition: color 0.3s ease-in-out;
+        }
+
+        #footer-links a:hover {
+            color: #ffc107;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1><a href="index.html" style="text-decoration: none; color: #fff;">EduSnap.ai</a></h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="About.html">About</a></li>
+                <li><a href="Pricing.html">Pricing</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Login/Registration Section -->
+    <section id="login-registration">
+        <h2>Login / Sign Up</h2>
+        <div id="login-registration-form">
+            <div id="login-form">
+                <form>
+                    <label for="email-login">Email or Username</label>
+                    <input type="email" id="email-login" name="email-login" required>
+                    <label for="password-login">Password</label>
+                    <input type="password" id="password-login" name="password-login" required>
+                    <a href="Pricing.html">
+                       
+                        <a href="Pricing1.html">
+                        <button id="login-button">Log In </button>
+                    </a>
+                    </a>
+                </form>
+            </div>
+
+            <div id="registration-form">
+                <form>
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required>
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required>
+                    <label for="email-register">Email</label>
+                    <input type="email" id="email-register" name="email-register" required>
+                    <label for="password-register">Password</label>
+                    <input type="password" id="password-register" name="password-register" required>
+                    
+                    <a href="Pricing1.html">
+                        <button id="register-button">Sign Up</button>
+                    </a>
+                </form>
+            </div>
+        </div>
+
+        <!-- Social Authentication Section -->
+        <div id="social-auth">
+            <button id="facebook-auth">Log In with Google</button>
+            <button id="google-auth">Sign up with Google</button>
+        </div>
+    </section>
+
+    <!-- Footer Section (same as home page) -->
+    <footer>
+        <div id="contact-info">
+            <p id="english-contact">Contact us at: edusnap@gmail.com</p>
+        </div>
+        <div id="footer-links">
+            <a href="PrivacyPolicy.html">Privacy Policy</a>
+            <a href="TermsofService.html">Terms of Service</a>
+            <a href="SocialLinks.html">Social Media Links</a>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Language Switching and Form Submission (you can add your own logic) -->
+    <script>
+    const loginButton = document.getElementById("login-button");
+    loginButton.addEventListener("click", function() {
+        window.location.href = "Pricing1.html";
+    });
+
+    const registerButton = document.getElementById("register-button");
+    registerButton.addEventListener("click", function() {
+        window.location.href = "Pricing1.html";
+    });
+
+    // Add your own logic for social authentication buttons
+    const facebookAuthButton = document.getElementById("facebook-auth");
+    facebookAuthButton.addEventListener("click", function() {
+        // Add your Facebook authentication logic here
+    });
+
+    const googleAuthButton = document.getElementById("google-auth");
+    googleAuthButton.addEventListener("click", function() {
+        // Add your Google authentication logic here
+    });
+    </script>
+</body>
+</html>

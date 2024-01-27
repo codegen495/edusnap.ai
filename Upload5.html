@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Content</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap">
+    <link rel="stylesheet" type="text/css" href="./source/animation.css">
+    <link rel="icon" type="image/png" href="./assets/Black & White Minimalist Business Logo (1).png">
+    <style type="text/css">
+  /* Body Styles */
+body {
+    background-color: #f8f8f8;
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header Styles */
+header {
+    background-color: #1a237e;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Center titles */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+nav li {
+    margin: 0 1rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+    transition: color 0.3s ease-in-out;
+}
+
+nav a:hover {
+    color: #ffc107;
+}
+
+/* CSS for the Notification Icon */
+#notification-icon {
+    width: 30px;
+    height: 30px;
+}
+
+/* Upload Section Styles */
+#upload-content {
+    background-color: #fff;
+    padding: 2rem;
+    text-align: center; /* Center titles */
+    
+}
+
+#upload-form {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#upload-form h2 {
+    color: #1a237e;
+    font-size: 35px; /* Larger font size */
+    margin-bottom: 20px;
+}
+
+#upload-form label {
+    display: block;
+    font-weight: bold;
+    margin-top: 20px;
+    font-size: 20px;
+
+}
+
+/* Additional Styling for Input Elements */
+
+
+#upload-file {
+    width: 100%;
+    padding: 5rem; /* Increased padding for better spacing */
+    margin-top: 15px; /* Adjusted margin top */
+    border: 1px solid #ccc;
+    border-radius: 8px; /* Rounded corners */
+    font-size: 16px; /* Larger font size */
+    color: #555; /* Darker text color */
+}
+
+#description {
+    width: 100%;
+    padding: 5rem; /* Increased padding for better spacing */
+    margin-top: 15px; /* Adjusted margin top */
+    border: 1px solid #ccc;
+    border-radius: 8px; /* Rounded corners */
+    font-size: 16px; /* Larger font size */
+    color: #555; /* Darker text color */
+    font-family: "Poppins", sans-serif;
+}
+
+#language-select
+ {
+    width: 30%;
+    padding: 1rem; /* Increased padding for better spacing */
+    margin-top: 15px; /* Adjusted margin top */
+    border: 1px solid #ccc;
+    border-radius: 8px; /* Rounded corners */
+    font-size: 20px; /* Larger font size */
+    color: #555; /* Darker text color */
+    font-family: "Poppins", sans-serif;
+}
+
+
+#upload-file {
+    background-color: #f5f5f5; /* Light gray background */
+}
+
+#upload-button {
+    background-color: #2196f3;
+    color: #fff;
+    padding: 1.5rem 2rem; /* Larger padding */
+    border: none;
+    cursor: pointer;
+    margin-top: 25px; /* Adjusted margin top */
+    font-size: 18px; /* Larger font size */
+    font-family: "Poppins", sans-serif;
+    border-radius: 8px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+#upload-button:hover {
+    background-color: #1769aa; /* Darker blue on hover */
+}
+
+#progress-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 25px; /* Adjusted margin top */
+}
+
+#progress-bar {
+    width: 150%;
+    margin: 0 20px;
+}
+
+#percentage {
+    font-size: 28px; /* Larger font size */
+    font-weight: bold;
+    width: 20%;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+}
+
+ /* Footer Styles */
+        footer {
+            background-color: #1a237e;
+            color: #fff;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 100px;
+        }
+
+        #contact-info {
+            margin-bottom: 1rem;
+        }
+
+        #footer-links {
+            display: flex;
+            justify-content: center;
+        }
+
+        #footer-links a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: 600;
+            transition: color 0.3s ease-in-out;
+        }
+
+        #footer-links a:hover {
+            color: #ffc107;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+
+    <!-- Header Section -->
+    <header>
+        <h1><a href="index.html" style="text-decoration: none; color: #fff;">EduSnap.ai</a></h1>
+        <nav>
+            <ul>
+                <li><a href="#"><img src="notification.png" alt="Notifications" id="notification-icon"></a></li>
+                <li><a href="#">Username</a></li>
+                <li><a href="#">Log Out</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <!-- Upload Section -->
+    <section id="upload-content">
+        <div id="upload-form">
+            <h2>Upload Your Content</h2>
+            <label for="language-select">Select Language:</label>
+            <select id="language-select">
+                <option value="english">English</option>
+                
+                
+            </select>
+
+            <label for="description">Description:</label>
+            <textarea id="description" placeholder="Describe the content..."></textarea>
+
+            <label for="upload-file">Upload Files (Images or PDFs):</label>
+            <input type="file" id="upload-file" accept="image/*, .pdf" multiple>
+            
+            <div id="progress-container">
+                <progress value="0" max="100" id="progress-bar"></progress>
+                <span id="percentage">0%</span>
+            </div>
+            
+           <button id="upload-button" onclick="goToPresetPage()">Upload</button>
+
+        </div>
+    </section>
+
+    <!-- Footer Section (same as home page) -->
+    <footer>
+        <div id="contact-info">
+            <p id="english-contact">Contact us at: edusnapai@gmail.com</p>
+        </div>
+        <div id="footer-links">
+            <a href="PrivacyPolicy.html">Privacy Policy</a>
+            <a href="TermsofService.html">Terms of Service</a>
+            <a href="SocialLinks.html">Social Media Links</a>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Percentage Update (you can add your own logic) -->
+    <script>
+        const uploadFile = document.getElementById("upload-file");
+        const progressBar = document.getElementById("progress-bar");
+        const percentage = document.getElementById("percentage");
+
+        uploadFile.addEventListener("change", (e) => {
+            const totalFiles = e.target.files.length;
+            let uploadedFiles = 0;
+
+            const updatePercentage = () => {
+                const percent = (uploadedFiles / totalFiles) * 100;
+                percentage.textContent = `${Math.round(percent)}%`;
+                progressBar.value = percent;
+            };
+
+            updatePercentage();
+
+            // Simulate file upload progress (remove this in your actual implementation)
+            const simulateUpload = () => {
+                uploadedFiles++;
+                updatePercentage();
+
+                if (uploadedFiles < totalFiles) {
+                    setTimeout(simulateUpload, 500);
+                }
+            };
+
+            // Simulate upload initiation (remove this in your actual implementation)
+            simulateUpload();
+        });
+
+         function goToPresetPage() {
+        window.location.href = "Preset5.html";
+    }
+    </script>
+</body>
+</html>
